@@ -19,7 +19,7 @@ use leptos::*;
 /// Devuelve `impl IntoView` para que Leptos pueda montarlo en el DOM.
 fn App() -> impl IntoView {
     view! {
-        <main class="min-h-screen bg-[#030213] text-white font-sans overflow-x-hidden">
+        <main class="min-h-screen bg-[#030213] text-white font-sans overflow-x-hidden overflow-y-auto">
 
             // --- Barra de Navegación ---
             <nav class="flex justify-between items-center px-10 py-6 bg-black/20 backdrop-blur-md sticky top-0 z-50">
@@ -40,7 +40,25 @@ fn App() -> impl IntoView {
 
             <section class="relative h-[90vh] flex items-center px-10 md:px-24">
 
-                <div class="absolute right-[-10%] top-[20%] w-[500px] h-[500px] rounded-full border-[12px] border-[#ff2d75] shadow-[0_0_100px_rgba(255,45,117,0.4)] opacity-50 hidden lg:block"></div>
+                // --- Vinilo Giratorio Completo ---
+<div class="absolute right-32 top-[15%] w-[500px] h-[500px] hidden lg:block z-0 overflow-hidden">
+    <div class="relative w-full h-full">
+
+        // 1. Borde de neón estático (Marco del disco)
+        <div class="absolute inset-0 rounded-full border-[10px] border-[#ff2d75] shadow-[0_0_60px_rgba(255,45,117,0.4)] opacity-60"></div>
+
+        // 2. El Disco que gira (Contenedor de la imagen)
+        <div class="absolute inset-2 rounded-full overflow-hidden border-4 border-black animate-[spin_12s_linear_infinite]">
+            <img
+                // PRUEBA ESTA RUTA: Si tu imagen está en assets
+                src="tripleT.jpg"
+                alt="DJ Gus"
+                class="w-full h-full object-cover"
+                on:error=move |_| logging::log!("Error cargando la imagen del vinilo")
+            />
+        </div>
+    </div>
+</div>
 
                 <div class="max-w-3xl z-10">
                     // Badge "En Vivo"
