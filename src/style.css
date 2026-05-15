@@ -1,0 +1,38 @@
+/*
+  Hoja de estilos complementaria para la landing "DJ Gustavo".
+  
+  Este archivo utiliza la sintaxis de Tailwind CSS para:
+  - Inyectar capas base, componentes y utilidades.
+  - Añadir utilidades personalizadas (texto con resplandor y animaciones).
+  
+  Nota: Si usas Tailwind vía CDN (como en `index.html`), estas reglas sirven como referencia.
+  En un build con Tailwind CLI/PostCSS puedes importar este archivo para generar un CSS purgado.
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Ajustes base de tipografía/fondo para toda la página */
+@layer base {
+    body {
+        @apply bg-[#030213] antialiased;
+    }
+}
+
+/* Efecto de resplandor para el texto destacado (ej. títulos) */
+.neon-text {
+    text-shadow: 0 0 20px rgba(255, 45, 117, 0.5),
+                0 0 40px rgba(255, 45, 117, 0.3);
+}
+
+/* Animación tipo "ecualizador" para el badge EN VIVO */
+@keyframes equalizer {
+    0%, 100% { height: 4px; }
+    50% { height: 16px; }
+}
+
+/* Utilidad para aplicar la animación anterior */
+.animate-equalizer {
+    animation: equalizer 1s ease-in-out infinite;
+}
