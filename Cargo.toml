@@ -1,0 +1,9 @@
+[package]
+name = "DJ"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+leptos = { version = "0.6", features = ["csr"] }
+# Para ver errores de Rust en la consola del navegador (INDISPENSABLE)
+console_error_panic_hook = "0.1.7"
