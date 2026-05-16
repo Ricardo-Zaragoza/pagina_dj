@@ -18,10 +18,12 @@ mod components {
 mod pages {
     pub mod home;
     pub mod servicios;
+    pub mod cabinas;
 }
+use components::nav::Nav;
 use pages::home::Home;
 use pages::servicios::Servicios;
-use components::nav::Nav;
+use pages::cabinas::Cabinas;
 #[component]
 
 
@@ -41,6 +43,7 @@ fn App() -> impl IntoView {
                 <Routes>
                     <Route path="" view=Home />
                     <Route path="servicios" view=Servicios />
+                    <Route path="cabinas" view=Cabinas />
                 </Routes>
 
             </main>

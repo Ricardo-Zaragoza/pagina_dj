@@ -40,7 +40,7 @@ pub fn Nav() -> impl IntoView {
                 <A href="/" class="hover:text-white transition-colors">"Inicio"</A>
                 <A href="/servicios" class="hover:text-white transition-colors">"Servicios"</A>
                 // Placeholders para futuras rutas/secciones
-                <a href="#" class="hover:text-white transition-colors">"Cabinas"</a>
+                <A href="/cabinas" class="hover:text-white transition-colors">"Cabinas"</A>
                 <a href="#" class="hover:text-white transition-colors">"Blog"</a>
                 <a href="#" class="hover:text-white transition-colors">"Reseñas"</a>
             </div>

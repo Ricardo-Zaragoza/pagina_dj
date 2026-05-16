@@ -6,8 +6,6 @@
 // - Solo se añaden comentarios de documentación; no hay cambios funcionales.
 
 use leptos::*; // Macros/tipos base de Leptos para construir la vista.
-use leptos_router::A; // Componente de enlace del enrutador para navegación SPA sin recarga.
-
 #[component]
 /// Componente de la página de inicio.
 /// Devuelve `impl IntoView` para que Leptos lo pueda montar en el DOM.

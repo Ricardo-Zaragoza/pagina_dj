@@ -1,9 +1,21 @@
+# Archivo de manifiesto de Cargo para el proyecto "DJ".
+# - `edition = "2024"`: usa las características del lenguaje y biblioteca estándar de Rust 2024.
+# - Dependencias:
+#   - `leptos` en modo CSR (Client-Side Rendering) para montar la SPA en el navegador.
+#   - `console_error_panic_hook` para volcar `panic!` en la consola del navegador (útil en desarrollo).
+
 [package]
 name = "DJ"
 version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+# Leptos como framework UI en Rust (renderizado cliente)
 leptos = { version = "0.6", features = ["csr"] }
 # Para ver errores de Rust en la consola del navegador (INDISPENSABLE)
 console_error_panic_hook = "0.1.7"
+leptos_router = { version = "0.6", features = ["csr"] }
+
+[package.metadata.dist]
+# Permite incluir archivos extra o carpetas enteras (rutas relativas al directorio del Cargo.toml)
+include = ["./images/", "./assets/"]

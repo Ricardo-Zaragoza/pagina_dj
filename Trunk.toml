@@ -1,0 +1,17 @@
+# Archivo de configuración de Trunk para construir y servir la app WASM.
+# Fecha de última edición: 2026-05-15 17:27 (hora local).
+#
+# Notas:
+# - `target` apunta al HTML base donde Trunk inyecta los bundles y desde donde se monta Leptos.
+# - La sección `[[assets]]` copia recursos estáticos (ej. imágenes) a `dist/` durante el build.
+
+[build]
+# Documento HTML raíz usado por Trunk para la salida
+target = "./index.html"
+
+# Directorio con recursos estáticos que deben copiarse tal cual al `dist/`
+[[assets]]
+data-dir = "./assets"
+[package.metadata.dist]
+# Permite incluir archivos extra o carpetas enteras (rutas relativas al directorio del Cargo.toml)
+include = ["./images/", "./assets/"]
