@@ -171,7 +171,12 @@ pub fn Cabinas() -> impl IntoView {
                                             class="w-full h-full object-cover transition-all duration-500"
                                         />
 
-                                        // Controles del carrusel si hay más de una imagen
+                                        // Controles del carrusel si hay más de una imagen:
+                                        // - Se muestran solo si `total_imgs > 1`.
+                                        // - Los botones izquierda/derecha actualizan `img_idx` con wrap-around (cíclico).
+                                        // - `e.stop_propagation()` evita que el click burbujee y active otros manejadores del contenedor.
+                                        // - `pointer-events-none` en el contenedor y `pointer-events-auto` en los botones
+                                        //   permiten hacer clic solo en los botones, no en toda la superposición.
                                         {if total_imgs > 1 {
                                             view! {
                                                 <div class="absolute inset-0 flex justify-between items-center px-2 pointer-events-none">
@@ -245,6 +250,7 @@ pub fn Cabinas() -> impl IntoView {
                                     <div class="flex justify-between items-center mb-3">
                                         <span class="text-[9px] text-gray-500 uppercase font-black tracking-widest">"Precio Venta"</span>
                                         <div class="text-lg font-black text-white">
+                                            // Formateo simple de miles: 3000 -> 3,000 (sin i18n); para formatos avanzados usar utilidades dedicadas.
                                             "$" {format!("{},{}", cabina.precio / 1000, format!("{:03}", cabina.precio % 1000))} " MXN"
                                         </div>
                                     </div>
