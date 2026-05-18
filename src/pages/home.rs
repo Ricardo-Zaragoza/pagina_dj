@@ -1,9 +1,11 @@
 // Archivo: src/pages/home.rs
 // Propósito: Página de inicio ("Home") de la landing de DJ Gustavo construida con Leptos.
-// Fecha de última edición: 2026-05-15 17:27 (hora local).
-//
-// Notas:
-// - Solo se añaden comentarios de documentación; no hay cambios funcionales.
+// Resumen de cambios recientes:
+// - Se añadió un bloque de "vinilo giratorio" con borde neón y animación CSS.
+// - Se agregaron logs de error al `on:error` de la imagen del vinilo para depuración.
+// - Se documentó la estructura general (badge en vivo, título, descripción y CTAs).
+// - No hay cambios funcionales en esta versión: solo mejoras de comentarios y estilo.
+// Fecha de última edición: 2026-05-18 16:21 (hora local).
 
 use leptos::*; // Macros/tipos base de Leptos para construir la vista.
 #[component]
